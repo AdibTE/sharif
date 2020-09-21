@@ -1,0 +1,195 @@
+@import './footer';
+@import './header';
+@import './sidebar';
+@import "./keyframes";
+
+@font-face {
+	font-family: 'IranSans';
+	src: url("../../fonts/IRANSansWeb.eot");
+	src: url("../../fonts/IRANSansWeb.woff2") format("woff2"), url("../../fonts/IRANSansWeb.woff") format("woff"),
+		url("../../fonts/IRANSansWeb.ttf") format("truetype");
+}
+@font-face {
+	font-family: 'IranSans';
+	src: url("../../fonts/IRANSansWeb_Bold.eot");
+	src: url("../../fonts/IRANSansWeb_Bold.ttf") format("woff2"),
+		url("../../fonts/IRANSansWeb_Bold.woff") format("woff"),
+		url("../../fonts/IRANSansWeb_Bold.woff2") format("truetype");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'BYekan';
+	src: url("../../fonts/byekan.eot");
+	src: url("../../fonts/byekan.woff") format("woff"), url("../../fonts/byekan.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'fontello';
+	src: url('../../vendor/fontello/font/fontello.eot?47298003');
+	src: url('../../vendor/fontello/font/fontello.eot?47298003#iefix') format('embedded-opentype'),
+		url('../../vendor/fontello/font/fontello.woff?47298003') format('woff'),
+		url('../../vendor/fontello/font/fontello.ttf?47298003') format('truetype'),
+		url('../../vendor/fontello/font/fontello.svg?47298003#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--yellow: #efc175;
+	--yellowdark: #daa95b;
+	--purple: #5d61a2;
+	--purpledark: #4f3a65;
+	--light: #f2ebff;
+	--light2: #ccc5da;
+	// --light: #f0eedf;
+	// --light2: #dad6c5;
+	--blue: #95adbe;
+	--white: #f5f5f5;
+	--radius: 10px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'IranSans';
+	-webkit-tap-highlight-color: transparent;
+	&:focus {
+		outline: none;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--white);
+
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--purple);
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--purple);
+}
+
+html {
+	scroll-behavior: smooth;
+	direction: rtl;
+}
+
+body {
+	background: var(--white);
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+input {
+	outline: none;
+	&[type="email"],
+	&[type="isnumber"] {
+		direction: ltr;
+	}
+}
+
+ul {
+	list-style-type: none;
+}
+
+.container {
+	width: 95%;
+	margin: auto;
+}
+
+.only768{
+	display: none;
+}
+.only540{
+	display: none;
+}
+
+.alerts-wrapper {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	z-index: 3;
+	.alert {
+		direction: rtl;
+		display: flex;
+		align-items: center;
+		padding: .8rem;
+		margin-top: 1rem;
+		border-radius: var(--radius);
+		background-color: var(--white);
+		box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 5px 20px rgba(0, 0, 0, 0.05);
+		animation: alertIn .8s ease 1 forwards;
+		position: relative;
+		> i {
+			margin-left: 1rem;
+			width: 30px;
+			height: 30px;
+			display: grid;
+			place-items: center;
+			border-radius: var(--radius);
+			color: white;
+			&.fa-check {
+				background-color: green;
+			}
+			&.fa-exclamation {
+				background-color: #e1b300;
+			}
+			&.fa-times {
+				background-color: #db2121;
+			}
+		}
+		button {
+			margin-right: 1rem;
+			background: none;
+			border: none;
+			line-height: 14px;
+			cursor: pointer;
+			color: var(--darkgrey);
+		}
+	}
+}
+
+.font-icon {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	// line-height: 1em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.main-content {
+	display: flex;
+	> aside {
+		width: 200px;
+	}
+	> main {
+		width: calc(100% - 200px);
+		// height: calc(100vh - 100px);
+		// overflow: auto;
+	}
+}
+
+@import './responsive';

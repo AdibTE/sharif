@@ -1,0 +1,106 @@
+.main-content > aside {
+	background-color: #fff;
+	height: 100vh;
+	overflow: auto;
+	padding: 1rem;
+	position: sticky;
+	top: 0;
+	.sidebar-profile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid var(--light);
+		> i {
+			font-size: 3rem;
+			color: var(--purple);
+		}
+		span {
+			color: var(--purple);
+			margin-bottom: .5rem;
+			font-size: 14px;
+		}
+		a {
+			width: 100%;
+			padding: .4rem 1rem;
+			border-radius: var(--radius);
+			background-color: var(--yellow);
+			color: white;
+			font-size: 14px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			transition: .2s;
+			&:hover,
+			&:active {
+				background-color: var(--yellowdark);
+			}
+		}
+	}
+	.sidebar-links {
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--light);
+		ul {
+			display: flex;
+			flex-direction: column;
+			li {
+				a {
+					background-color: var(--light);
+					padding: .4rem 1rem;
+					width: 100%;
+					border-radius: var(--radius);
+					display: block;
+					font-size: 14px;
+					// box-shadow: 0px 1px 0px var(--light2);
+					color: var(--purple);
+					transition: .5s;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					i {
+						font-size: 16px;
+					}
+					&:hover,
+					&:active {
+						background-color: var(--yellow);
+						color: white;
+						&:after {
+							display: none;
+						}
+					}
+				}
+				.sub-links-wrapper {
+					display: none;
+					a.sub-link {
+						border-radius: 0;
+						position: relative;
+						&:last-of-type {
+							border-radius: 0 0 var(--radius) var(--radius);
+						}
+					}
+				}
+				&.clicked > a:first-of-type{
+					border-radius: var(--radius) var(--radius) 0 0;
+					border-bottom: 1px solid var(--light2);
+					background-color: var(--light2);
+					color: var(--purple);
+				}
+				&:not(:first-of-type) > a {
+					margin-top: .5rem;
+				}
+			}
+		}
+	}
+	.sidebar-extra {
+		text-align: center;
+		font-size: 12px;
+	}
+	&.open{
+		width: 100%;
+		position: absolute;
+		z-index: 10;
+		top: 70px;
+	}
+}

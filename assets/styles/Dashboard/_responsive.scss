@@ -1,0 +1,33 @@
+@media (max-width: 1024px) {
+	main > .dashboard {
+		grid-template-columns: repeat(3, 1fr);
+		.dashboard-item {
+			height: 160px;
+			h2 {
+				font-size: 16px;
+			}
+			img {
+				width: 30%;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	main > .dashboard {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 3rem;
+	}
+}
+
+@media (max-width: 540px) {
+	main > .dashboard {
+		padding: 2rem;
+	}
+}
+
+@media (max-width: 320px) {
+	main > .dashboard {
+		grid-template-columns: 1fr;
+	}
+}
