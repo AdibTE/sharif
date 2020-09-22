@@ -62,13 +62,13 @@
 					i {
 						font-size: 16px;
 					}
-					&:hover,
-					&:active {
-						background-color: var(--yellow);
+					&:hover {
+						background-color: var(--light2);
+						color: var(--purpledark);
+					}
+					&:active{
+						background: var(--purple);
 						color: white;
-						&:after {
-							display: none;
-						}
 					}
 				}
 				.sub-links-wrapper {
@@ -83,9 +83,8 @@
 				}
 				&.clicked > a:first-of-type{
 					border-radius: var(--radius) var(--radius) 0 0;
-					border-bottom: 1px solid var(--light2);
-					background-color: var(--light2);
-					color: var(--purple);
+					background-color: var(--purple);
+					color: white;
 				}
 				&:not(:first-of-type) > a {
 					margin-top: .5rem;

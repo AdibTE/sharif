@@ -50,7 +50,7 @@
     },
     {
       "uid": "a1c09a9c8b5d8cd1df7c857e0951459f",
-      "css": "eye-2",
+      "css": "eye-1",
       "code": 59408,
       "src": "custom_icons",
       "selected": true,
@@ -78,7 +78,7 @@
     },
     {
       "uid": "658237bfd1d5969bd334b1f847f2def8",
-      "css": "edit-2",
+      "css": "edit-1",
       "code": 59406,
       "src": "custom_icons",
       "selected": true,
@@ -303,6 +303,24 @@
       "css": "cancel",
       "code": 59411,
       "src": "modernpics"
+    },
+    {
+      "uid": "3e2bd88137dd7ceec98b4bfd8640e5ec",
+      "css": "edit-2",
+      "code": 59413,
+      "src": "linecons"
+    },
+    {
+      "uid": "2cc73cc335f054682c04fe63439c4dcb",
+      "css": "trash-2",
+      "code": 59414,
+      "src": "linecons"
+    },
+    {
+      "uid": "a58c05a8a3ba59ababd4860a30892560",
+      "css": "eye-2",
+      "code": 59415,
+      "src": "linecons"
     },
     {
       "uid": "bb217d9f28a315a28ad619d66e5f81aa",

@@ -2,6 +2,9 @@
 @import './header';
 @import './sidebar';
 @import "./keyframes";
+@import "./panel";
+@import "./tables";
+@import "./tooltip";
 
 @font-face {
 	font-family: 'IranSans';
@@ -46,6 +49,9 @@
 	// --light2: #dad6c5;
 	--blue: #95adbe;
 	--white: #f5f5f5;
+	--black: #aaaaaa;
+	--shadow: rgba(0, 0, 0, 0.118);
+	--shadowlight: rgba(0, 0, 0, 0.09);
 	--radius: 10px;
 }
 
@@ -66,13 +72,11 @@
 }
 
 ::-webkit-scrollbar-track {
-	background: var(--white);
-
+	background: var(--light);
 }
 
 ::-webkit-scrollbar-thumb {
 	background: var(--purple);
-
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -93,7 +97,6 @@ a {
 	text-decoration: none;
 }
 
-
 input {
 	outline: none;
 	&[type="email"],
@@ -111,10 +114,10 @@ ul {
 	margin: auto;
 }
 
-.only768{
+.only768 {
 	display: none;
 }
-.only540{
+.only540 {
 	display: none;
 }
 
@@ -187,6 +190,7 @@ ul {
 	}
 	> main {
 		width: calc(100% - 200px);
+		padding: 4rem 5rem;
 		// height: calc(100vh - 100px);
 		// overflow: auto;
 	}

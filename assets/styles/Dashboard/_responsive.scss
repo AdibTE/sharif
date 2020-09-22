@@ -16,13 +16,6 @@
 @media (max-width: 768px) {
 	main > .dashboard {
 		grid-template-columns: repeat(2, 1fr);
-		padding: 3rem;
-	}
-}
-
-@media (max-width: 540px) {
-	main > .dashboard {
-		padding: 2rem;
 	}
 }
 

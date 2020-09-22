@@ -1,21 +1,3 @@
-@media (min-width: 768px) {
-	.container {
-		width: 750px;
-	}
-}
-
-@media (min-width: 992px) {
-	.container {
-		width: 970px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		width: 1170px;
-	}
-}
-
 /********** End container repsonsive ***********/
 
 @media (max-width: 1024px) {
@@ -36,6 +18,22 @@
 			h1 {
 				font-size: 16px;
 			}
+		}
+	}
+	.main-content > main{
+		padding: 2rem 3rem;
+	}
+	.panel-container .panel-heading {
+		// flex-wrap: wrap-reverse;
+		// justify-content: center;
+		// gap: 1rem;
+		display: grid;
+		justify-content: center;
+		grid-gap: 1rem;
+		grid-template-columns: 1fr;
+		.panel-breadcrumb{
+			order: -1;
+			justify-content: flex-end;
 		}
 	}
 	footer {
@@ -68,7 +66,7 @@
 			justify-content: center;
 			nav {
 				display: none;
-				.search-box{
+				.search-box {
 					display: flex;
 				}
 			}
@@ -80,6 +78,26 @@
 			width: 50px;
 			height: 50px;
 		}
+	}
+	.panel-container .panel-heading {
+		padding: 0;
+		.panel-tabs {
+			flex-wrap: wrap;
+			width: 100%;
+			.tab {
+				width: 100%;
+				margin-top: -5px;
+				&:not(:last-of-type) {
+					margin-left: 0;
+				}
+				&.active {
+					box-shadow: 0 -5px 10px var(--shadowlight);
+				}
+			}
+		}
+	}
+	.main-content > main {
+		padding: 3rem;
 	}
 	footer {
 		grid-template-columns: 1fr;
@@ -109,28 +127,31 @@
 		display: unset !important;
 	}
 	header {
-		.only540{
+		.only540 {
 			height: 16px;
 			line-height: 16px;
 		}
-		.navbar-container{
-			h1{
+		.navbar-container {
+			h1 {
 				font-size: 12px;
 			}
-			.logo-mobile{
+			.logo-mobile {
 				display: unset;
 				width: 35px;
 			}
 		}
-		.logo-container{
+		.logo-container {
 			display: none;
 		}
 	}
-	.main-content > aside{
-		display: none;
-	}
-	.main-content > main {
-		width: 100%;
+	.main-content {
+		& > aside {
+			display: none;
+		}
+		& > main {
+			width: 100%;
+			padding: 2rem;
+		}
 	}
 	footer {
 		padding: 2rem 2rem 0;
@@ -145,7 +166,7 @@
 			& > i {
 				font-size: 7rem;
 				top: 50%;
-				transform: translateY(-50%)
+				transform: translateY(-50%);
 			}
 			address .address-detail {
 				flex-direction: column !important;
@@ -169,14 +190,14 @@
 }
 
 @media (max-width: 375px) {
-	header{
+	header {
 		padding: 0 1rem;
 	}
 }
 @media (max-width: 320px) {
-	header{
+	header {
 		padding: 0 1rem;
-		.navbar-container h1{
+		.navbar-container h1 {
 			font-size: 10px;
 		}
 	}
