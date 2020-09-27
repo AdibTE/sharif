@@ -12,8 +12,13 @@
     <!-- JQuery UI -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <!-- Bootstrap (grid only) -->
     <link rel="stylesheet" href="./assets/vendor/bootstrap/bootstrap-grid.css">
+    <!-- Fontello -->
+    <link rel="stylesheet" href="./assets/vendor/fontello/css/fontello.css">
 
     <!-- Custom -->
     <script src="./assets/scripts/global.js"></script>
@@ -26,18 +31,18 @@
             <img src="./assets/images/logo.png" class="logo" alt="دانشگاه شریف">
         </div>
         <div class="only540" id="sidebar_Opener">
-            <a href="#"><i class="font-icon icon-th-thumb-empty">&#xf00b;</i></a>
+            <a href="#"><i class="font-icon icon-th-thumb-empty"></i></a>
         </div>
         <div class="navbar-container">
             <img src="./assets/images/logo.png" class="logo-mobile" alt="دانشگاه شریف">
-            <h1>سامانه جامع آزمایشگاهی دانشگاه صنعتی شریف</h1>
+            <h1> سامانه جامع مدیریت خدمات آزمایشگاهی شریف</h1>
             <nav>
                 <div class="search-box">
                     <input type="text" name="search" placeholder="جستجو کنید...">
-                    <button><i class="font-icon">&#xe806;</i></button>
+                    <button><i class="font-icon icon-search"></i></button>
                 </div>
                 <div class="only768">
-                    <a href="#"><i class="font-icon">&#xe809;</i>حساب کاربری</a>
+                    <a href="#"><i class="font-icon icon-user"></i>حساب کاربری</a>
                 </div>
                 <a href="#">صفحه اصلی</a>
                 <a href="#">نستعلیق</a>
@@ -50,20 +55,20 @@
             </nav>
         </div>
         <div class="search-and-login">
-            <a href="#"><i class="font-icon icon-user">&#xe809;</i><span>حساب کاربری</span></a>
-            <a href="#"><i class="font-icon icon-search">&#xe806;</i><span><input type="text"
+            <a href="#"><i class="font-icon icon-user"></i><span>حساب کاربری</span></a>
+            <a href="#"><i class="font-icon icon-search"></i><span><input type="text"
                         placeholder="جستجو کنید" /></span></a>
         </div>
         <div class="only768" id="menu_Opener">
-            <a href="#"><i class="font-icon icon-menu-1">&#xf0c9;</i></a>
+            <a href="#"><i class="font-icon icon-menu-1"></i></a>
         </div>
     </header>
     <section class="main-content">
         <aside>
             <div class="sidebar-profile">
-                <i class="font-icon setting icon-profile">&#xe805;</i>
+                <i class="font-icon icon-profile"></i>
                 <span>مدیر سیستم</span>
-                <a href="#">تنظیمات پروفایل <i class="font-icon setting icon-settings">&#xe807;</i></a>
+                <a href="#">تنظیمات پروفایل <i class="font-icon setting icon-settings"></i></a>
             </div>
             <div class="sidebar-links">
                 <ul>
@@ -72,14 +77,14 @@
                     <li><a href="#">لینک تستی</a></li>
                     <li><a href="#">لینک تستی</a></li>
                     <li>
-                        <a href="#?" class="has-sub">لینک تستی<i class="font-icon icon-arrow">&#xe80a;</i></a>
+                        <a href="#?" class="has-sub">لینک تستی<i class="font-icon icon-arrow"></i></a>
                         <div class="sub-links-wrapper">
                             <a href="#" class="sub-link">لینک داخلی</a>
                         </div>
 
                     </li>
                     <li>
-                        <a href="#?" class="has-sub">لینک تستی<i class="font-icon icon-arrow">&#xe80a;</i></a>
+                        <a href="#?" class="has-sub">لینک تستی<i class="font-icon icon-arrow"></i></a>
                         <div class="sub-links-wrapper">
                             <a href="#" class="sub-link">لینک داخلی</a>
                             <a href="#" class="sub-link">لینک داخلی</a>
@@ -107,14 +112,24 @@
                 </div>
                 <div class="panel-body">
                     <form class="table-filters">
-                        <span class="filters-label"><i class="font-icon">&#xe812;</i>فیلترها:</span>
+                        <span class="filters-label"><i class="font-icon icon-filter"></i>فیلترها:</span>
                         <div class="form-element">
                             <label>نام کاربر</label>
                             <input type="text">
                         </div>
                         <div class="form-element">
                             <label>وضعیت کاربر</label>
-                            <select>
+                            <select class="select2-basic">
+                                <option value="1">تست</option>
+                            </select>
+                        </div>
+                        <div class="form-element">
+                            <label>نام کاربر</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-element">
+                            <label>وضعیت کاربر</label>
+                            <select class="select2-basic">
                                 <option value="">تست</option>
                             </select>
                         </div>
@@ -124,114 +139,117 @@
                         </div>
                         <div class="form-element">
                             <label>وضعیت کاربر</label>
-                            <select>
-                                <option value="">تست</option>
+                            <select class="select2-basic">
+                                <option></option>
+                                <option value="1">تست اول</option>
+                                <option value="2">تست دومی</option>
+                                <option value="3">تست دومی</option>
+                                <option value="4">تست دومی</option>
                             </select>
                         </div>
-                        <div class="form-element">
-                            <label>نام کاربر</label>
-                            <input type="text">
-                        </div>
-                        <div class="form-element">
-                            <label>وضعیت کاربر</label>
-                            <select>
-                                <option value="">تست</option>
-                            </select>
-                        </div>
-                        <button>جستجو</button>
-                        <span data-role="more-filters">فیلتر های بیشتر...</span>
+                        <button data-ripple>جستجو</button>
+                        <span data-role="more-filters">فیلتر های بیشتر<i class="font-icon icon-arrow"></i></span>
                     </form>
-                   <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ردیف</th>
-                                <th>نام کاربر</th>
-                                <th>وضعیت کاربر</th>
-                                <th>نقش کاربر</th>
-                                <th>تاریخ ثبت‌نام</th>
-                                <th>اقدامات</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>۱</td>
-                                <td>نام کاربر فرضی</td>
-                                <td>فعال</td>
-                                <td>نقش کاربر</td>
-                                <td>۱۳۹۹/۶/۲۴</td>
-                                <td class="action-cell">
-                                    <a href="#" data-tooltip="مشاهده">
-                                        <i class="font-icon icon-eye-2">&#xe817;</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="font-icon icon-edit-2">&#xe815;</i>
-                                    </a>
-                                    <form action="#">
-                                        <i class="font-icon icon-trash-2">&#xe816;</i>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>۲</td>
-                                <td>نام کاربر فرضی</td>
-                                <td>فعال</td>
-                                <td>نقش کاربر</td>
-                                <td>۱۳۹۹/۶/۲۴</td>
-                                <td class="action-cell">
-                                    <a href="#" data-tooltip="مشاهده">
-                                        <i class="font-icon icon-eye-2">&#xe817;</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="font-icon icon-edit-2">&#xe815;</i>
-                                    </a>
-                                    <form action="#">
-                                        <i class="font-icon icon-trash-2">&#xe816;</i>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>۳</td>
-                                <td>نام کاربر فرضی</td>
-                                <td>فعال</td>
-                                <td>نقش کاربر</td>
-                                <td>۱۳۹۹/۶/۲۴</td>
-                                <td class="action-cell">
-                                    <a href="#" data-tooltip="مشاهده">
-                                        <i class="font-icon icon-eye-2">&#xe817;</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="font-icon icon-edit-2">&#xe815;</i>
-                                    </a>
-                                    <form action="#">
-                                        <i class="font-icon icon-trash-2">&#xe816;</i>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>۱</td>
-                                <td>نام کاربر فرضی</td>
-                                <td>فعال</td>
-                                <td>نقش کاربر</td>
-                                <td>۱۳۹۹/۶/۲۴</td>
-                                <td class="action-cell">
-                                    <a href="#" data-tooltip="مشاهده">
-                                        <i class="font-icon icon-eye-2">&#xe817;</i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="font-icon icon-edit-2">&#xe815;</i>
-                                    </a>
-                                    <form action="#">
-                                        <i class="font-icon icon-trash-2">&#xe816;</i>
-                                    </form>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                   </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ردیف</th>
+                                    <th>نام کاربر</th>
+                                    <th>وضعیت کاربر</th>
+                                    <th>نقش کاربر</th>
+                                    <th>تاریخ ثبت‌نام</th>
+                                    <th>اقدامات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>۱</td>
+                                    <td>نام کاربر فرضی</td>
+                                    <td>فعال</td>
+                                    <td>نقش کاربر</td>
+                                    <td>۱۳۹۹/۶/۲۴</td>
+                                    <td class="action-cell">
+                                        <a href="#" data-tooltip="مشاهده">
+                                            <i class="font-icon icon-eye-2"></i>
+                                        </a>
+                                        <a href="#" data-tooltip="ویرایش">
+                                            <i class="font-icon icon-edit-2"></i>
+                                        </a>
+                                        <form action="#" data-tooltip="حذف">
+                                            <i class="font-icon icon-trash-2"></i>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>۲</td>
+                                    <td>نام کاربر فرضی</td>
+                                    <td>فعال</td>
+                                    <td>نقش کاربر</td>
+                                    <td>۱۳۹۹/۶/۲۴</td>
+                                    <td class="action-cell">
+                                        <a href="#" data-tooltip="مشاهده">
+                                            <i class="font-icon icon-eye-2"></i>
+                                        </a>
+                                        <a href="#" data-tooltip="ویرایش">
+                                            <i class="font-icon icon-edit-2"></i>
+                                        </a>
+                                        <form action="#" data-tooltip="حذف">
+                                            <i class="font-icon icon-trash-2"></i>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>۳</td>
+                                    <td>نام کاربر فرضی</td>
+                                    <td>فعال</td>
+                                    <td>نقش کاربر</td>
+                                    <td>۱۳۹۹/۶/۲۴</td>
+                                    <td class="action-cell">
+                                        <a href="#" data-tooltip="مشاهده">
+                                            <i class="font-icon icon-eye-2"></i>
+                                        </a>
+                                        <a href="#" data-tooltip="ویرایش">
+                                            <i class="font-icon icon-edit-2"></i>
+                                        </a>
+                                        <form action="#" data-tooltip="حذف">
+                                            <i class="font-icon icon-trash-2"></i>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>۱</td>
+                                    <td>نام کاربر فرضی</td>
+                                    <td>فعال</td>
+                                    <td>نقش کاربر</td>
+                                    <td>۱۳۹۹/۶/۲۴</td>
+                                    <td class="action-cell">
+                                        <a href="#" data-tooltip="مشاهده">
+                                            <i class="font-icon icon-eye-2"></i>
+                                        </a>
+                                        <a href="#" data-tooltip="ویرایش">
+                                            <i class="font-icon icon-edit-2"></i>
+                                        </a>
+                                        <form action="#" data-tooltip="حذف">
+                                            <i class="font-icon icon-trash-2"></i>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="panel-footer">
-                    بخش فوتر پنل
+                    <form class="pagination">
+                        <a href="#" data-prev><i class="font-icon icon-left-open"></i></a>
+                        <a href="#" data-first>۱</a>
+                        <a href="#" class="active">۲</a>
+                        <a href="#">۳</a>
+                        <!-- <span>...</span> -->
+                        <input name="pageNumber" placeholder="...">
+                        <a href="#" data-last>۸۵۰۰</a>
+                        <a href="#" data-next><i class="font-icon icon-right-open"></i></a>
+                    </form>
                 </div>
             </div>
         </main>
@@ -262,7 +280,7 @@
             </div>
         </div>
         <div class="address-wrapper">
-            <i class="font-icon icon-marker">&#xe803;</i>
+            <i class="font-icon icon-marker"></i>
             <address>
                 <div class="address-detail">
                     <label>آدرس</label>
@@ -303,10 +321,10 @@
             </nav>
             <div class="cp-and-sm">
                 <div class="social-media">
-                    <a href="#"><i class="font-icon icon-skype">&#xe808;</i></a>
-                    <a href="#"><i class="font-icon icon-instagram">&#xe801;</i></a>
-                    <a href="#"><i class="font-icon icon-linkedin">&#xe802;</i></a>
-                    <a href="#"><i class="font-icon icon-googleplus">&#xe800;</i></a>
+                    <a href="#"><i class="font-icon icon-skype"></i></a>
+                    <a href="#"><i class="font-icon icon-instagram"></i></a>
+                    <a href="#"><i class="font-icon icon-linkedin"></i></a>
+                    <a href="#"><i class="font-icon icon-googleplus"></i></a>
                 </div>
                 <p class="copyright">تمامی حقوق مادی و معنوی این وب‌سایت متعلق به دانشگاه صنعتی شریف می‌باشد.</p>
             </div>

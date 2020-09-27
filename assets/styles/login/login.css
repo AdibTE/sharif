@@ -1,0 +1,91 @@
+#sidebar_Opener {
+  pointer-events: none;
+}
+
+.main-content {
+  background: url("../../images/loginbackground.jpg");
+  background-size: cover;
+}
+
+.main-content #login {
+  min-height: calc(100vh - 489px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 2rem;
+  width: clamp(300px, 50%, 350px);
+  margin: 2rem auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 10px var(--shadow);
+          box-shadow: 0 5px 10px var(--shadow);
+  border-radius: var(--radius);
+}
+
+.main-content #login h1 {
+  margin-bottom: 2rem;
+  color: var(--purpledark);
+}
+
+.main-content #login .login-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.main-content #login .login-element label {
+  color: var(--purple);
+}
+
+.main-content #login .login-element input,
+.main-content #login .login-element button {
+  width: 100%;
+  border-radius: var(--radius);
+  padding: .5rem 1rem;
+  border: 1px solid var(--light2);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.main-content #login .login-element button {
+  background: var(--purpledark);
+  color: white;
+  border-color: var(--purpledark);
+  cursor: pointer;
+}
+
+.main-content #login .login-element input:focus {
+  border-color: var(--purple);
+}
+
+.main-content #login .login-extra {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--light2);
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.main-content #login .login-extra a {
+  color: var(--purple);
+}
+/*# sourceMappingURL=login.css.map */

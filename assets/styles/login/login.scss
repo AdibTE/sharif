@@ -1,0 +1,64 @@
+#sidebar_Opener{
+	pointer-events: none;
+}
+
+.main-content {
+	background: url('../../images/loginbackground.jpg');
+	background-size: cover;
+}
+
+.main-content #login {
+	min-height: calc(100vh - 489px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: max-content;
+	padding: 2rem;
+	width: clamp(300px, 50%, 350px);
+	margin: 2rem auto;
+	background-color: #fff;
+	box-shadow: 0 5px 10px var(--shadow);
+	border-radius: var(--radius);
+	h1 {
+		margin-bottom: 2rem;
+		color: var(--purpledark);
+	}
+	.login-element {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: 1rem;
+		label {
+			color: var(--purple);
+		}
+		input,
+		button {
+			width: 100%;
+			border-radius: var(--radius);
+			padding: .5rem 1rem;
+			border: 1px solid var(--light2);
+			transition: .3s ease;
+		}
+		button {
+			background: var(--purpledark);
+			color: white;
+			border-color: var(--purpledark);
+			cursor: pointer;
+		}
+		input:focus {
+			border-color: var(--purple);
+		}
+	}
+	.login-extra {
+		margin-top: 1rem;
+		padding-top: 1rem;
+		border-top: 1px dashed var(--light2);
+		width: 100%;
+		text-align: center;
+		font-size: 14px;
+		a {
+			color: var(--purple);
+		}
+	}
+}

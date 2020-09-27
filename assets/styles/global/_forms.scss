@@ -1,0 +1,226 @@
+.form-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem 0;
+	.form-divider {
+		display: block;
+		width: 100%;
+		margin: 2rem 15px;
+		position: relative;
+		span {
+			width: 100%;
+			height: 1.5px;
+			background-color: var(--light);
+			display: block;
+		}
+		h2 {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff;
+			padding: 0 1rem;
+			font-size: 20px;
+			font-weight: 100;
+			color: var(--purple);
+		}
+	}
+	.form-element {
+		border: 1px solid var(--light2);
+		border-radius: var(--radius);
+		padding: 0 .75rem;
+		color: var(--light2);
+		font-size: 14px;
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-template-columns: max-content 1fr 30px;
+		transition: .3s;
+		position: relative;
+		input,
+		select,
+		textarea {
+			border: none;
+			margin-right: .5rem;
+			color: var(--purple);
+			width: 100%;
+			padding: .5rem 0;
+			border-bottom: 1px solid var(--light2);
+			transition: .3s;
+			&:invalid {
+				box-shadow: none;
+			}
+			&[disabled] {
+				border: none;
+			}
+        }
+		label {
+			white-space: nowrap;
+        }
+		.required-sign {
+			box-shadow: 0 0 0px 1px var(--light2) inset;
+			margin-right: .75rem;
+			border-radius: 6px;
+			font-size: 14px;
+			line-height: 14px;
+			color: var(--light2);
+			margin-left: -5px;
+			display: grid;
+			place-items: center;
+			width: 20px;
+			height: 20px;
+			transition: .3s;
+		}
+		.error-message {
+			color: var(--error);
+			display: none;
+			position: absolute;
+			bottom: -20px;
+			left: .5rem;
+			font-size: 10px;
+			i {
+				font-size: 12px;
+				margin-left: 2px;
+			}
+		}
+
+		&.textarea,
+		&.checkbox,
+		&.radiobox {
+			grid-template-columns: 1fr 30px;
+			label {
+				margin: .5rem 0;
+			}
+			textarea,
+			.list {
+				border-top: 1px solid var(--light2);
+				grid-column: 1/3;
+				margin: 0;
+				resize: none;
+			}
+			.list {
+				padding: .5rem;
+				display: flex;
+				flex-wrap: wrap;
+				label {
+					background: var(--light);
+					display: grid;
+					grid-auto-flow: column;
+					align-items: center;
+					padding: .2rem .5rem;
+					border-radius: var(--radius);
+					color: var(--purple);
+					font-size: 12px;
+					input {
+						width: unset;
+						margin-right: unset;
+						margin-left: 1rem;
+					}
+					&:not(:last-of-type) {
+						margin-left: .5rem;
+					}
+				}
+			}
+		}
+
+		&.valid {
+			border-color: var(--success);
+			input,
+			select,
+			textarea {
+				border-color: var(--success);
+			}
+			.required-sign {
+				color: var(--success);
+			}
+		}
+		&.invalid {
+			border-color: var(--error);
+			input,
+			select,
+			textarea {
+				border-color: var(--error);
+			}
+			.required-sign {
+				color: var(--error);
+			}
+			.error-message {
+				display: unset;
+			}
+		}
+		&.disabled {
+			background-color: var(--light);
+			select,
+			input,
+			textarea {
+				cursor: not-allowed;
+				background-color: var(--light);
+			}
+		}
+		&.optional{
+			grid-template-columns: max-content 1fr;
+			padding-left: 1.25rem;
+		}
+
+		&:focus-within {
+			border-color: var(--purple);
+			box-shadow: 0 0 15px var(--shadow);
+			select,
+			input,
+			textarea {
+				border-color: var(--purple);
+			}
+			.required-sign {
+				color: var(--purple);
+			}
+			.error-message {
+				display: none;
+			}
+		}
+	}
+	.btn {
+		background: var(--light);
+		border: none;
+		border-radius: var(--radius);
+		padding: .7rem;
+		// font-weight: 900;
+		color: var(--purple);
+		cursor: pointer;
+		transition: .3s ease-out;
+		border: 1px solid var(--light2);
+		box-shadow: 0 0px 0px var(--black);
+		&:hover {
+			background: var(--light2);
+		}
+		&:active {
+			transform: scale(0.9);
+		}
+		&.btn-block {
+			width: 100%;
+		}
+	}
+}
+
+@mixin btnMixin($name , $color ,$darkColor,$textColor:white) {
+	.btn.btn-#{$name} {
+		background: $color;
+		color: $textColor;
+		border-color: $darkColor;
+		&:hover {
+			background-color: $darkColor;
+		}
+	}
+}
+
+@include btnMixin(purple,var(--purple),#474b86);
+@include btnMixin(purpledark,var(--purpledark),#38244e);
+@include btnMixin(yellow,var(--yellow),var(--yellowdark));
+@include btnMixin(success,var(--success),var(--successdark));
+@include btnMixin(primary,var(--light2),#a89dbd,var(--purple));
+@include btnMixin(secondary,var(--black),#888);
+@include btnMixin(secondary,var(--black),#888);
+
+.btn[disabled] {
+	opacity: .5;
+	pointer-events: none;
+}

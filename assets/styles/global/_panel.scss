@@ -40,6 +40,8 @@
 		.panel-breadcrumb {
 			display: flex;
 			align-items: center;
+			margin-right: auto;
+			height: 40px;
 			li {
 				a {
 					color: var(--black);
@@ -69,6 +71,7 @@
 		}
 	}
 	.panel-body {
+		position: relative;
 		background: white;
 		border-radius: var(--radius);
 		padding: 1.5rem;
@@ -105,13 +108,13 @@
 					border: none;
 					margin-right: .5rem;
 					color: var(--purple);
-					flex:1;
+					flex: 1;
 				}
 				input {
 					border-bottom: 1px dashed var(--purple);
-					flex:1;
+					flex: 1;
 				}
-				label{
+				label {
 					white-space: nowrap;
 				}
 				&:focus-within {
@@ -120,11 +123,19 @@
 					// 	border-bottom-style: solid;
 					// }
 				}
-				&.col input{
+				&.col input {
 					width: 10vw;
 				}
+				.select2-container--default{
+					height: 24px;
+					.select2-selection--single{
+						height: unset;
+						padding: 0;
+						border:none;
+					}
+				}
 			}
-			button {
+			> button {
 				background: var(--yellow);
 				color: white;
 				border: none;
@@ -141,13 +152,28 @@
 			}
 			[data-role="more-filters"] {
 				font-size: 12px;
-				margin-right: 1rem;
+				margin-right: .5rem;
 				color: var(--purple);
 				cursor: pointer;
+				border: 1px solid;
+				padding: .5rem;
+				border-radius: var(--radius);
+				cursor: pointer;
+				transition: .2s;
+				display: flex;
+				align-items: center;
+				i {
+					margin-right: .5rem;
+					transform: rotate(90deg);
+				}
 				&:hover {
+					background-color: var(--light2);
 					color: var(--purpledark);
 				}
 			}
+		}
+		.select2-container{
+			width: 100% !important;
 		}
 	}
 	.panel-footer {
@@ -158,5 +184,61 @@
 		box-shadow: 0 3px 10px var(--shadow);
 		font-size: 14px;
 		color: var(--purpledark);
+	}
+	.pagination {
+		direction: ltr;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		a,
+		span, input {
+			margin-right: .5rem;
+		}
+		a  {
+			min-width: 25px;
+			height: 25px;	
+			padding: 0 .5rem;
+			display: grid;
+			place-items: center;
+			background: var(--light);
+			border-radius: 50px;
+			transition: .2s;
+			color: var(--purple);
+			line-height: 27px;
+			i{
+				line-height: 25px;
+			}
+			&:last-of-type {
+				margin: 0;
+			}
+			&:hover,&:active{
+				background-color: var(--light2);
+			}
+			&:active{
+				// transform: scale(.9);
+				background:var(--yellow);
+				color: white;
+			}
+			&.active{
+				background: var(--purple);
+				color: white;
+			}
+			&[data-next] , &[data-prev]{
+				padding: 0;
+			}
+		}
+		input{
+			max-width: 50px;
+			height: 25px;
+			border-radius: 50px;
+			border: 1px solid var(--light2);
+			text-align: center;
+			color: var(--purple);
+			transition: .3s;
+			&:focus{
+				border-color: var(--purple);
+			}
+		}
 	}
 }

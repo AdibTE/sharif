@@ -5,6 +5,8 @@
 @import "./panel";
 @import "./tables";
 @import "./tooltip";
+@import "./forms";
+@import "./select2";
 
 @font-face {
 	font-family: 'IranSans';
@@ -48,6 +50,10 @@
 	// --light: #f0eedf;
 	// --light2: #dad6c5;
 	--blue: #95adbe;
+	--error: #d20017;
+	--errordark: #9e0012;
+	--success: #5dbb5a;
+	--successdark: #3d973a;
 	--white: #f5f5f5;
 	--black: #aaaaaa;
 	--shadow: rgba(0, 0, 0, 0.118);
@@ -121,6 +127,19 @@ ul {
 	display: none;
 }
 
+.main-content {
+	display: flex;
+	> aside {
+		width: 200px;
+	}
+	> main {
+		width: calc(100% - 200px);
+		padding: 4rem 5rem;
+		// height: calc(100vh - 100px);
+		// overflow: auto;
+	}
+}
+
 .alerts-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -168,6 +187,38 @@ ul {
 	}
 }
 
+// ripple effect
+.ripple-container {
+	position: relative;
+	overflow: hidden;
+	.ripple {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border-radius: 10px;
+		.ripple-circle {
+			position: absolute;
+			background: rgba(251, 232, 211, 0.3);
+			border: 1px solid transparent;
+			border-radius: 50%;
+			overflow: hidden;
+			pointer-events: none;
+			animation: ripple 1s 1;
+		}
+	}
+}
+
+// datepicker overright
+.datepicker-plot-area {
+	border-radius: var(--radius);
+	tr {
+		border: none !important;
+	}
+}
+
 .font-icon {
 	font-family: "fontello";
 	font-style: normal;
@@ -182,18 +233,10 @@ ul {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-.main-content {
-	display: flex;
-	> aside {
-		width: 200px;
-	}
-	> main {
-		width: calc(100% - 200px);
-		padding: 4rem 5rem;
-		// height: calc(100vh - 100px);
-		// overflow: auto;
-	}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	margin-right: 0;
+	margin-left: 0;
 }
 
 @import './responsive';

@@ -1,0 +1,20 @@
+@keyframes ripple {
+    from {
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        border-radius: 50%;
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: scale(250);
+        -moz-transform: scale(250);
+        -ms-transform: scale(250);
+        -o-transform: scale(250);
+        border-radius: 50%;
+        transform: scale(250);
+    }
+}
